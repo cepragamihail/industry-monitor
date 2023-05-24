@@ -5,9 +5,12 @@
       [opened]="(isHandset$ | async) === false">
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item href="#">Link 1</a>
-      <a mat-list-item href="#">Link 2</a>
-      <a mat-list-item href="#">Link 3</a>
+      <ng-container *ngFor="let item of _menuItems">
+        <a mat-list-item href="{{item.route}}">{{item.name}}</a>
+      </ng-container>
+      <!-- <a mat-list-item href="#">Link 1</a> -->
+      <!-- <a mat-list-item href="#">Link 2</a> -->
+      <!-- <a mat-list-item href="#">Link 3</a> -->
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
